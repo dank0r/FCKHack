@@ -22,3 +22,13 @@
   align-items: center;
   overflow-y: hidden;
 }
+
+.filters {
+  z-index: 10000;
+  position: absolute;
+  top: 56px;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  background-color: #fff;
+}
