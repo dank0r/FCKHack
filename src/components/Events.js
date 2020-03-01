@@ -16,6 +16,7 @@ class Events extends React.Component {
     super(props);
     this.state = {
       isFilters: false,
+      value: ''
     };
     this.handleFilters = this.handleFilters.bind(this);
   }
@@ -37,14 +38,13 @@ class Events extends React.Component {
         {this.state.isFilters ?
           <div className={styles.filters}><Filters /></div> : null}
         <div className={styles.searchBar}>
-          {isFilters ? 123 : null}
-        <SearchInput placeholder="Поиск" />
+        <SearchInput placeholder="Поиск" customChange={(val)=>{this.setState({value: val});}} />
           <IconButton onClick={this.handleFilters}>
             <Icon icon={ic_tune} size={32} />
           </IconButton>
         </div>
       <div className={styles.events}>
-        {isLoading ? <LinearProgress color="secondary" /> : events.filter(e => e.tags.some(t => fTags.length === 0 || fTags.some(ft => t == ft))).map((e) => <Event
+        {isLoading ? <LinearProgress color="secondary" /> : events.filter(e=>this.state.value.length === 0 || e.title.split(' ').some(s => s === this.state.value)).filter(e => e.tags.some(t => fTags.length === 0 || fTags.some(ft => t == ft))).map((e) => <Event
           title={e.title}
           location={e.location}
           time={e.time_str}

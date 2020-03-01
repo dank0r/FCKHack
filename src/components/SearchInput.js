@@ -13,9 +13,11 @@ class SearchInput extends React.Component {
         <div className={styles.search}>
           <div className={styles.icon} />
           <div className={styles.inputWrapper}>
-            <input placeholder={this.props.placeholder} className={`${styles.input}`} type="text"
+            <input placeholder={this.props.placeholder} onChange={this.props.onChange} className={`${styles.input}`} type="text"
                    value={this.state.value}
-                   onChange={e => this.setState({value: e.target.value})}/>
+                   onChange={e => {this.setState({value: e.target.value});
+                   this.props.customChange(e.target.value);
+                   }}/>
             <div className={styles.underline} />
           </div>
         </div>

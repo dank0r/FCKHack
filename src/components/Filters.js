@@ -12,7 +12,7 @@ class Filters extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      fTags: [],
+      fTags: this.props.fff,
       value: '',
     };
   }
@@ -41,6 +41,7 @@ const mapStateToProps = state => ({
   events: state.events.list,
   isLoading: state.events.isLoading,
   isFilters: state.filters.isOpened,
+  fff: state.filters.filteredTags,
 });
 
 export default connect(mapStateToProps)(Filters);
