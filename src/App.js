@@ -1,25 +1,21 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import styles from './App.module.css';
+import { Provider } from 'react-redux';
+import { createStore } from 'redux';
+import reducer from './reducers';
+import BottomNav from './components/BottomNav';
+import Root from './components/Root';
+
+const store = createStore(reducer);
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Provider store={store}>
+      <div className={styles.App}>
+        <Root />
+        <BottomNav active={store.getState().navigation.screen} />
+      </div>
+    </Provider>
   );
 }
 

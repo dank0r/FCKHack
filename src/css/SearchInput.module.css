@@ -1,0 +1,65 @@
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.search {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 5px;
+}
+
+.icon {
+  height: 25px;
+  width: 25px;
+  background-image: url("../img/search.svg");
+  background-size: cover;
+  /* just applying filters to get color #7540ee */
+  filter: invert(29%) sepia(63%) saturate(6242%) hue-rotate(251deg) brightness(97%) contrast(93%);
+  margin: 5px;
+}
+
+.inputWrapper {
+  width: 100%;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.input {
+  background: transparent;
+  width: 100%;
+  border: none;
+  font-size: 13px;
+  letter-spacing: 0;
+  font-family: "Montserrat", serif;
+  font-weight: 500;
+  margin: 4px;
+}
+
+.input::placeholder {
+  letter-spacing: 0;
+  color: #d0d0d4;
+  font-weight: 500;
+}
+
+.input:focus {
+  border: none;
+  outline: none;
+}
+
+.underline {
+  width: 0;
+  height: 2px;
+  background-color: #7540ee;
+  transition: width 0.2s ease-in-out;
+}
+
+.input:focus + .underline {
+  width: calc(100% - 4px);
+}

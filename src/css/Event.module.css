@@ -1,0 +1,84 @@
+.event {
+  width: 100%;
+  margin-bottom: 10px;
+  background-color: #a0a0a0;
+  font-family: Montserrat, serif;
+}
+
+.card {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.header {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  background-color: #c0c0c0;
+}
+
+.image {
+  z-index: 100;
+  margin-right: 0;
+  padding: 0;
+  width: 300px;
+  height: 100px;
+  background-image: url("../img/img.jpg");
+}
+
+.info {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-flow: column;
+  justify-content: space-between;
+  align-items: flex-end;
+  backdrop-filter: blur(2px);
+}
+
+.title {
+  font-weight: 900;
+}
+
+.tags {
+  width: 100%;
+  padding-top: 5px;
+  padding-bottom: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.tag {
+  margin-left: 5px;
+  margin-top: 5px;
+}
+
+.bottomBar {
+  width: 100%;
+}
+
+.bottomMenu {
+  width: 100%;
+  height: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.icon {
+}
+
+.iconRotated {
+  transform: rotate(180deg);
+}
+
+.description {
+  width: 100%;
+  padding: 10px;
+}
