@@ -6,6 +6,7 @@ class Personal extends React.Component {
   render() {
     return (
       <div className={styles.events}>
+        Not Available yet :)
       </div>
     );
   }
