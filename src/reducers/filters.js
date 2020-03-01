@@ -6,6 +6,8 @@ const events = (state = {isOpened: false, filteredTags: [] }, action) => {
       return {...state, isOpened: false};
     case 'ADD_FILTER':
       return {...state, filteredTags: state.filteredTags.concat(action.filter)};
+    case 'DEL_FILTER':
+      return {...state, filteredTags: state.filteredTags.filter(f => f!== action.filter)};
     default:
       return state
   }

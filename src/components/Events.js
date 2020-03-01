@@ -30,6 +30,8 @@ class Events extends React.Component {
   }
   render() {
     let {events, isLoading, isFilters, fTags} = this.props;
+    console.log(fTags);
+
     return (
       <div className={styles.wrapper}>
         {this.state.isFilters ?
@@ -42,48 +44,13 @@ class Events extends React.Component {
           </IconButton>
         </div>
       <div className={styles.events}>
-        {isLoading ? <LinearProgress color="secondary" /> : events.filter(e => e.tags.some(t => fTags.length === 0 || fTags.some(ft => t === ft))).map((e) => <Event
+        {isLoading ? <LinearProgress color="secondary" /> : events.filter(e => e.tags.some(t => fTags.length === 0 || fTags.some(ft => t == ft))).map((e) => <Event
           title={e.title}
           location={e.location}
           time={e.time_str}
           description={e.description}
           tags={e.tags}
         />)}
-        <Event
-          title="Хакатон ФЦК"
-          location="2-й этаж КСП"
-          time="29 февраля, 10:00"
-          description="С 29 февраля по 1 марта в Долгопрудном пройдёт хакатон «ФЦК» от Phystech.Genesis и Фонда целевого капитала (ФЦК) МФТИ."
-          tags={['Machine Learning', 'Хакатон', 'ФЦК', 'МФТИ', 'Разработка']}
-        />
-        <Event
-          title="Хакатон ФЦК"
-          location="2-й этаж КСП"
-          time="29 февраля, 10:00"
-          description="С 29 февраля по 1 марта в Долгопрудном пройдёт хакатон «ФЦК» от Phystech.Genesis и Фонда целевого капитала (ФЦК) МФТИ."
-          tags={['Machine Learning', 'Хакатон', 'ФЦК', 'МФТИ', 'Разработка']}
-        />
-        <Event
-          title="Хакатон ФЦК"
-          location="2-й этаж КСП"
-          time="29 февраля, 10:00"
-          description="С 29 февраля по 1 марта в Долгопрудном пройдёт хакатон «ФЦК» от Phystech.Genesis и Фонда целевого капитала (ФЦК) МФТИ."
-          tags={['Machine Learning', 'Хакатон', 'ФЦК', 'МФТИ', 'Разработка']}
-        />
-        <Event
-          title="Хакатон ФЦК"
-          location="2-й этаж КСП"
-          time="29 февраля, 10:00"
-          description="С 29 февраля по 1 марта в Долгопрудном пройдёт хакатон «ФЦК» от Phystech.Genesis и Фонда целевого капитала (ФЦК) МФТИ."
-          tags={['Machine Learning', 'Хакатон', 'ФЦК', 'МФТИ', 'Разработка']}
-        />
-        <Event
-          title="Хакатон ФЦК"
-          location="2-й этаж КСП"
-          time="29 февраля, 10:00"
-          description="С 29 февраля по 1 марта в Долгопрудном пройдёт хакатон «ФЦК» от Phystech.Genesis и Фонда целевого капитала (ФЦК) МФТИ."
-          tags={['Machine Learning', 'Хакатон', 'ФЦК', 'МФТИ', 'Разработка']}
-        />
       </div>
       </div>
     );

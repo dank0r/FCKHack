@@ -6,7 +6,7 @@ import {Icon} from 'react-icons-kit';
 import TextField from '@material-ui/core/TextField';
 import {ic_add} from 'react-icons-kit/md/ic_add';
 import Chip from '@material-ui/core/Chip';
-import { addFilter } from '../actions';
+import { addFilter, delFilter } from '../actions';
 
 class Filters extends React.Component {
   constructor(props) {
@@ -21,7 +21,8 @@ class Filters extends React.Component {
     let {dispatch} = this.props;
     return (
       <div className={styles.filters}>
-        {this.state.fTags.map((t) => <Chip color="secondary" size="small" label={t} onClick={()=>null} />)}
+        {this.state.fTags.map((t) => <Chip color="secondary" size="small" label={t} onClick={()=>{dispatch(addFilter(t));
+        this.setState({fTags: this.state.fTags.filter(f => f!== t)});}} />)}
         <TextField label="Добавить тэг" value={this.state.value} onChange={(e) => {this.setState({value: e.target.value});
 
         }} />

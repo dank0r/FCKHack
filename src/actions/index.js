@@ -20,7 +20,12 @@ export const closeFilters = data => ({
 
 export const addFilter = data => ({
   type: 'ADD_FILTER',
-  filter: data.filter,
+  filter: data,
+});
+
+export const delFilter = data => ({
+  type: 'DEL_FILTER',
+  filter: data,
 });
 
 export function fetchEvents() {
